@@ -12,7 +12,7 @@ import java.util.*;
 public class Prototype extends PrototypeBase
 {
     public Prototype parent;
-    public List<Prototype> containerList = new Vector<Prototype>(); //
+    public List<Prototype> containerList //= new Vector<Prototype>(); //
 
 
 
