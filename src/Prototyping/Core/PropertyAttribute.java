@@ -9,11 +9,20 @@ public class PropertyAttribute extends PropertyBase
 {
     protected String value;
 
-
-    public PropertyAttribute (Object valuation) {
+    /**
+     * @param valuation
+     */
+    public PropertyAttribute(Object valuation) {
         this.value = valuation.toString();
         this.type = value.getClass();
         this.parent = PropertyFather.getInstance();
     }
 
+    /**
+     *
+     * @return
+     */
+    public String getValue() {
+        return value;
+    }
 }

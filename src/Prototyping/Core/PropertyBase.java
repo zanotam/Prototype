@@ -10,12 +10,18 @@ public abstract class PropertyBase extends BaseClass
     protected Object value;
 
 
-
+    /**
+     * @return
+     */
     public Object getValue()
     {
         return value;
     }
 
+    /**
+     *
+     * @return
+     */
     public Class getType() {
         return type;
     }

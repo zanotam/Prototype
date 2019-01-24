@@ -7,12 +7,18 @@ public class PropertyFather extends PropertyBase
 {
     private static PropertyFather ourInstance = new PropertyFather();
 
+    /**
+     *
+     */
     private PropertyFather() {
         this.value = this;
         this.type = this.value.getClass();
         this.parent = this;
     }
 
+    /**
+     * @return
+     */
     public static PropertyFather getInstance() {
         return ourInstance;
     }

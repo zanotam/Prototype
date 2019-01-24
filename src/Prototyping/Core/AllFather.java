@@ -10,23 +10,36 @@ import org.jetbrains.annotations.Contract;
 public class AllFather extends BaseClass {
     private static AllFather ourInstance = new AllFather();
 
+    /**
+     *
+     */
     protected AllFather() {
         parent = ourInstance;
     }
 
+    /**
+     * @return
+     */
     @Contract(pure = true)
-    public static AllFather getInstance()
-    {
+    public static AllFather getInstance() {
         return ourInstance;
     }
 
 
-
+    /**
+     *
+     * @return
+     */
     @java.lang.Override
     public BaseClass getParent()
     {
         return parent;
     }
+
+    /**
+     *
+     * @param parent
+     */
     @java.lang.Override
     public void setParent(BaseClass parent)
     {

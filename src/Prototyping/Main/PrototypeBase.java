@@ -16,13 +16,21 @@ public abstract class PrototypeBase extends BaseClass {
     public Map<String, PropertyAttribute> body; //inspired by JSON but for now just the equivalent of String->String
 
 
-
+    /**
+     * @param properties
+     * @param subObjects
+     */
     public PrototypeBase(Map<String, PropertyAttribute> properties, Map<Class, PropertyObject> subObjects)
     {
         this.parent = PrototypeFather.getInstance();
         this.soul = subObjects;
         this.body = properties;
     }
+
+    /**
+     *
+     * @param father
+     */
     public PrototypeBase(PrototypeBase father)
     {
         this.parent = father;
@@ -30,21 +38,42 @@ public abstract class PrototypeBase extends BaseClass {
         body = new LinkedHashMap<String, PropertyAttribute>();
 
     }
+    /* removed because I feel it's extraneous and I don't want it running in the background when I don't expect it
+        e.g. on prototype Father I don't want to bother running this.
     public PrototypeBase()
     {
         parent = PrototypeFather.getInstance();
         soul = new LinkedHashMap<Class, PropertyObject>();
         body = new LinkedHashMap<String, PropertyAttribute>();
     }
+    */
 
-
+    /**
+     * @param soulProperty
+     * @return
+     */
     public abstract boolean writeSoul(PropertyObject soulProperty);
 
+    /**
+     *
+     * @param bodyPropertyName
+     * @param bodyProperty
+     * @return
+     */
     public abstract boolean writeBody(String bodyPropertyName, PropertyAttribute bodyProperty);
 
-
+    /**
+     *
+     * @param key
+     * @return
+     */
     public abstract PropertyObject searchSoul(Class key);
 
+    /**
+     *
+     * @param key
+     * @return
+     */
     public abstract PropertyAttribute searchBody(String key);
 
 }

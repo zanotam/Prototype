@@ -8,7 +8,9 @@ public class PropertyObject extends PropertyBase
 {
 
 
-
+    /**
+     * @param valuation
+     */
     public PropertyObject(Object valuation)
     {
         this.value = valuation;

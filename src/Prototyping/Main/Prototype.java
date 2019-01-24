@@ -13,21 +13,29 @@ public class Prototype extends PrototypeBase
 {
     public List<Prototype> containerList; //= new Vector<Prototype>(); //
 
-
+    /**
+     * @param properties
+     * @param subObjects
+     */
     public Prototype(Map<String, PropertyAttribute> properties, Map<Class, PropertyObject> subObjects) {
         super(properties, subObjects);
-        parent = PrototypeFather.getInstance();
         containerList = new Vector<Prototype>();
     }
 
+    /**
+     *
+     * @param father
+     */
     public Prototype(Prototype father) {
         super(father);
         containerList = new Vector<Prototype>();
     }
 
+    /**
+     *
+     */
     public Prototype() {
-        super();
-        parent = PrototypeFather.getInstance();
+        super(PrototypeFather.getInstance());
         containerList = new Vector<Prototype>();
     }
 
@@ -46,13 +54,23 @@ public class Prototype extends PrototypeBase
         return success;
     }
 
+    /**
+     *
+     * @param bodyPropertyName
+     * @param bodyProperty
+     * @return
+     */
     public boolean writeBody(String bodyPropertyName, PropertyAttribute bodyProperty) {
         boolean success = false;
 
         return success;
     }
 
-
+    /**
+     *
+     * @param key
+     * @return
+     */
     public PropertyObject searchSoul(Class key) {
         PropertyObject answer;
         answer = this.soul.get(key);
@@ -66,6 +84,11 @@ public class Prototype extends PrototypeBase
         return answer;
     }
 
+    /**
+     *
+     * @param key
+     * @return
+     */
     public PropertyAttribute searchBody(String key) {
         PropertyAttribute answer;
         answer = this.body.get(key);
