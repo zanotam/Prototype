@@ -3,11 +3,10 @@
  */
 package Prototyping.Core;
 
-import Prototyping.Core.Allfather;
-
 public class PropertyBase extends Allfather
 {
     public Class type;
+    //basically lets property data be immutable... well not quite... but you can't change what the value points to.
     protected Object value;
 
 
@@ -15,5 +14,9 @@ public class PropertyBase extends Allfather
     public Object getValue()
     {
         return value;
+    }
+
+    public Class getType() {
+        return type;
     }
 }

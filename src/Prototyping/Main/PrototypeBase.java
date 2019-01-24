@@ -4,15 +4,18 @@
  */
 package Prototyping.Main;
 
-import java.util.*;
+import Prototyping.Core.Allfather;
+import Prototyping.Core.BaseClass;
+import Prototyping.Core.PropertyAttribute;
+import Prototyping.Core.PropertyObject;
 
-import Prototyping.Core.*;
+import java.util.*;
 
 public class PrototypeBase extends Allfather
 {
     public BaseClass parent;
     public Map<Class, PropertyObject> soul; //sorta like.... supertypes with instantiation
-    public Map<String, PropertyAttribute> body; //basically just JSON data but... heavier.
+    public Map<String, PropertyAttribute> body; //inspired by JSON but for now just the equivalent of String->String
 
 
 

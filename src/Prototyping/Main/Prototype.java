@@ -25,9 +25,9 @@ public class Prototype extends PrototypeBase
     public Prototype(Prototype father)
     {
         super(father);
-        contai nerList = new Vector<Prototype>();
+        containerList = new Vector<Prototype>();
     }
-    
+
     public Prototype()
     {
         super();
