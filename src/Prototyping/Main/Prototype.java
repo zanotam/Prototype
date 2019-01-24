@@ -21,11 +21,13 @@ public class Prototype extends PrototypeBase
         parent = PrototypeFather.getInstance();
         containerList = new Vector<Prototype>();
     }
+
     public Prototype(Prototype father)
     {
         super(father);
-        containerList = new Vector<Prototype>();
+        contai nerList = new Vector<Prototype>();
     }
+    
     public Prototype()
     {
         super();
