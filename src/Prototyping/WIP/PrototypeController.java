@@ -1,7 +1,6 @@
 package Prototyping.WIP;
 
-import Prototyping.Core.Allfather;
-import Prototyping.WIP.PrototypeHandler;
+import Prototyping.Core.AllFather;
 
-public class PrototypeController extends Allfather implements PrototypeHandler {
+public class PrototypeController extends AllFather implements PrototypeHandler {
 }

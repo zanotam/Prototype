@@ -1,9 +1,9 @@
-/*
-    The base class, just so there's a shared class among properties and prototypes.
- */
 package Prototyping.Core;
 
-public class BaseClass
+/**
+ * The base class, just so there's a shared class among properties and prototypes.
+ */
+public abstract class BaseClass
 {
     public BaseClass parent;
 

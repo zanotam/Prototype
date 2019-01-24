@@ -1,8 +1,8 @@
-/*
-    The base parent for properties so they don't have to use AllFather.
- */
 package Prototyping.Core;
 
+/**
+ * The base parent for properties so they don't have to use AllFather.
+ */
 public class PropertyFather extends PropertyBase
 {
     private static PropertyFather ourInstance = new PropertyFather();
@@ -10,6 +10,7 @@ public class PropertyFather extends PropertyBase
     private PropertyFather() {
         this.value = this;
         this.type = this.value.getClass();
+        this.parent = this;
     }
 
     public static PropertyFather getInstance() {

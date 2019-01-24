@@ -1,27 +1,25 @@
-/*
-    Basically an abstract class for most intents and purposees, but with some basic implementation included
-    in case someone else wants to use this and doesn't want the containerList field in the Prototype class.
- */
 package Prototyping.Main;
 
-import Prototyping.Core.Allfather;
 import Prototyping.Core.BaseClass;
 import Prototyping.Core.PropertyAttribute;
 import Prototyping.Core.PropertyObject;
 
 import java.util.*;
 
-public class PrototypeBase extends Allfather
-{
-    public BaseClass parent;
-    public Map<Class, PropertyObject> soul; //sorta like.... supertypes with instantiation
+/**
+ * Basically an abstract class for most intents and purposees, but with some basic implementation included
+ * in case someone else wants to use this and doesn't want the containerList field in the Prototype class.
+ */
+public abstract class PrototypeBase extends BaseClass {
+    public PrototypeBase parent;
+    public Map<Class, PropertyObject> soul; //sorta like.... supertypes with instantiation. Or implemented interfaces
     public Map<String, PropertyAttribute> body; //inspired by JSON but for now just the equivalent of String->String
 
 
 
     public PrototypeBase(Map<String, PropertyAttribute> properties, Map<Class, PropertyObject> subObjects)
     {
-        this.parent = Allfather.getInstance();
+        this.parent = PrototypeFather.getInstance();
         this.soul = subObjects;
         this.body = properties;
     }
@@ -34,58 +32,19 @@ public class PrototypeBase extends Allfather
     }
     public PrototypeBase()
     {
-        parent = Allfather.getInstance();
+        parent = PrototypeFather.getInstance();
         soul = new LinkedHashMap<Class, PropertyObject>();
         body = new LinkedHashMap<String, PropertyAttribute>();
     }
 
 
+    public abstract boolean writeSoul(PropertyObject soulProperty);
 
-    //add event that fires telling the object involved that it's being put in the soul
-    public void writeSoul(PropertyObject soulProperty)
-    {
-
-    }// see above
-    public void writeSoul(PrototypeBase soulProperty)
-    {
-
-    }
-
-    public void writeBody(String bodyPropertyName, PropertyAttribute bodyProperty)
-    {
-
-    }
-    public void writeBody(String bodyPropertyName, Object bodyProperty)
-    {
-
-    }
+    public abstract boolean writeBody(String bodyPropertyName, PropertyAttribute bodyProperty);
 
 
-    public PropertyObject searchSoul(Class key)
-    {
-        PropertyObject answer;
-        answer = this.soul.get(key);
-        if (answer == null) //keep searching parents if key goes nowhere
-        {
-            if (this.parent != PrototypeFather.getInstance()) //check for stop searching
-            {
-                answer = this.parent.searchSoul(key);
-            }
-        }
-        return answer;
-    }
+    public abstract PropertyObject searchSoul(Class key);
 
-    public PropertyAttribute searchBody(String key)
-    {
-        PropertyAttribute answer;
-        answer = this.body.get(key);
-        if (answer == null) //keep searching parents if key goes nowhere
-        {
-            if (this.parent != PrototypeFather.getInstance()) //check for stop searching
-            {
-                answer = this.parent.searchBody(key);
-            }
-        }
-        return answer;
-    }
+    public abstract PropertyAttribute searchBody(String key);
+
 }

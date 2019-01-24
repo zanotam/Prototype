@@ -1,9 +1,9 @@
-/*
-    The base class so that you can refer to a property of unknown type.
- */
 package Prototyping.Core;
 
-public class PropertyBase extends Allfather
+/**
+ * The base class so that you can refer to a property of unknown type.
+ */
+public abstract class PropertyBase extends BaseClass
 {
     public Class type;
     //basically lets property data be immutable... well not quite... but you can't change what the value points to.
